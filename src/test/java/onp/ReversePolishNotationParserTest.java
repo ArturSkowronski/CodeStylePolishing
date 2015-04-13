@@ -1,7 +1,9 @@
 package onp;
 
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 import static org.junit.Assert.assertEquals;
 
@@ -28,6 +30,17 @@ public class ReversePolishNotationParserTest {
         reversePolishNotationParser.calculateExpressionValue(null);
     }
 
+    @Rule
+    public ExpectedException expectedEx = ExpectedException.none();
+
+
+    @Test(expected=IllegalArgumentException.class)
+    public void testIllegalArgumentIfUnsupported() throws Exception {
+        reversePolishNotationParser.calculateExpressionValue("2 3 test");
+        expectedEx.expect(IllegalArgumentException.class);
+        expectedEx.expectMessage("Unsupported Operation");
+    }
+
     @Test
     public void testSubtraction() throws Exception {
         assertEquals(reversePolishNotationParser.calculateExpressionValue("2 1 -"), 1);
@@ -42,4 +55,10 @@ public class ReversePolishNotationParserTest {
     public void testDivision() throws Exception {
         assertEquals(reversePolishNotationParser.calculateExpressionValue("2 1 /"), 2);
     }
+
+    @Test
+    public void testAbsolute() throws Exception {
+        assertEquals(reversePolishNotationParser.calculateExpressionValue("2 1 /"), 2);
+    }
 }
+

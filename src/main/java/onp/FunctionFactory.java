@@ -7,7 +7,7 @@ import onp.functions.*;
  */
 public class FunctionFactory {
     static BaseFunction getFunction(String operation){
-        BaseFunction function = null;
+        BaseFunction function;
         switch(operation){
             case "+":
                 function = new Addition();
@@ -24,6 +24,8 @@ public class FunctionFactory {
             case "abs":
                 function = new Absolute();
             break;
+            default:
+                throw new IllegalArgumentException("Unsupported Operation");
         }
         return function;
     }
