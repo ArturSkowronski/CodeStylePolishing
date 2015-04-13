@@ -1,6 +1,7 @@
 package onp;
 
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.math.NumberUtils;
 
 import java.util.Arrays;
 import java.util.Stack;
@@ -21,7 +22,7 @@ public class ReversePolishNotationParserImpl implements ReversePolishNotationPar
         Stack<Integer> stack = new Stack<>();
 
         Arrays.stream(expression.split(" ")).forEach(item -> {
-            if(StringUtils.isNumeric(item)){
+            if(NumberUtils.isNumber(item)){
                 stack.push(Integer.parseInt(item));
             } else {
                 functionFactory.getFunction(item).operate(stack);

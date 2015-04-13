@@ -58,7 +58,7 @@ public class ReversePolishNotationParserTest {
 
     @Test
     public void testAbsolute() throws Exception {
-        assertEquals(reversePolishNotationParser.calculateExpressionValue("2 1 /"), 2);
+        assertEquals(reversePolishNotationParser.calculateExpressionValue("2 -1 abs /"), 2);
     }
 
     @Test
