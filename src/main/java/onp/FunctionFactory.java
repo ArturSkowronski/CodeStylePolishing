@@ -25,7 +25,7 @@ public class FunctionFactory {
 
     public BaseFunction getFunction(String operation){
         BaseFunction function = functionRespository.get(operation);
-        if(function == null) throw new IllegalArgumentException("Unssuported Function");
+        if(function == null) throw new IllegalArgumentException("Unsupported Operation");
         return function;
     }
 }
