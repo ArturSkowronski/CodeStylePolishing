@@ -25,7 +25,6 @@ public class ReversePolishNotationParserImpl implements ReversePolishNotationPar
                 FunctionFactory.getFunction(item).operate(stack);
             }
         }
-
         );
         return stack.pop();
     }
