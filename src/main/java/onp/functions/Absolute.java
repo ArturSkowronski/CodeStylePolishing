@@ -14,5 +14,10 @@ public class Absolute implements BaseFunction{
         stack.push(abs(pop));
     }
 
+    @Override
+    public String getOperation() {
+        return "abs";
+    }
+
 
 }

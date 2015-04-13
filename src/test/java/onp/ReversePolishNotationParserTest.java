@@ -60,5 +60,10 @@ public class ReversePolishNotationParserTest {
     public void testAbsolute() throws Exception {
         assertEquals(reversePolishNotationParser.calculateExpressionValue("2 1 /"), 2);
     }
+
+    @Test
+    public void testMixedExpression() throws Exception {
+        assertEquals(reversePolishNotationParser.calculateExpressionValue("12 2 3 4 * 10 5 / + * +"), 40);
+    }
 }
 

@@ -7,4 +7,5 @@ import java.util.Stack;
  */
 public interface BaseFunction {
     public void operate(Stack<Integer> stack);
+    public String getOperation();
 }

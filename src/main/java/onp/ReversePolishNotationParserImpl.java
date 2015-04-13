@@ -10,6 +10,8 @@ import java.util.Stack;
  */
 public class ReversePolishNotationParserImpl implements ReversePolishNotationParser {
 
+    FunctionFactory functionFactory = new FunctionFactory();
+
     @Override
     public int calculateExpressionValue(String expression) {
         if(expression==null){
@@ -22,7 +24,7 @@ public class ReversePolishNotationParserImpl implements ReversePolishNotationPar
             if(StringUtils.isNumeric(item)){
                 stack.push(Integer.parseInt(item));
             } else {
-                FunctionFactory.getFunction(item).operate(stack);
+                functionFactory.getFunction(item).operate(stack);
             }
         }
         );

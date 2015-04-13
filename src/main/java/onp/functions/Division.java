@@ -12,4 +12,9 @@ public class Division implements BaseFunction {
         Integer pop2 = stack.pop();
         stack.push(pop2 / pop);
     }
+
+    @Override
+    public String getOperation() {
+        return "/";
+    }
 }
