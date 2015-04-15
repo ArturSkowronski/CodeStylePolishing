@@ -2,6 +2,7 @@ package adventuregame.console;
 
 import adventuregame.structure.GameOption;
 import adventuregame.structure.GameScreen;
+
 import java.util.List;
 
 /**
@@ -9,12 +10,17 @@ import java.util.List;
  */
 public class GameScreenImpl implements GameScreen {
 
+    private final String description;
+    private final List<GameOption> gameOption;
+
     public GameScreenImpl(String description, List<GameOption> gameOption) {
+        this.description = description;
+        this.gameOption = gameOption;
     }
 
     @Override
-    public void selectOption(int option) {
-
+    public int selectOption(int option) {
+        return 0;
     }
 
 }
